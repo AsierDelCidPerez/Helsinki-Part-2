@@ -24,21 +24,21 @@ const Hello = props => {
 
 const Boton = ({handleClick, text}) => <button onClick={handleClick}>{text}</button>
 
-const Display = ({left, right}) => {
-  return (
-    <span>Left: {left} & Right: {right}</span>
-  )
-}
+const Display = ({left, right}) => <span>Left: {left} & Right: {right}</span>
 
 
 const App = () => {
-  const [left, setLeft] = useState(0);
-  const [right, setRight] = useState(0);
-  const increasedLeft = () => setLeft(left+1);
-  const increasedRight = () => setRight(right+1);
+  const [clicks, setClicks] = useState({
+    left : 0, right: 0
+  });
+
+  const increasedLeft = () => setClicks({...clicks, left : clicks.left+1});
+
+  const increasedRight = () => setClicks({...clicks, right : clicks.right+1});
+  
   return (
     <div align="center">
-      <Display left={left} right={right}/><br/>
+      <Display left={clicks.left} right={clicks.right}/><br/>
       <Boton handleClick={increasedLeft} text="<-"/><br/>
       <Boton handleClick={increasedRight} text="->"/>
     </div>
