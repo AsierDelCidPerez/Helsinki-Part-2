@@ -1,2 +1,11 @@
-const average = (...args) => args.reduce((previous, current) => previous+current)/args.length;
-console.log(average(10, 0, 5));
+const obj = {
+    name : {
+       firstName : "Arthur",
+       lastName : "Edward" 
+    },
+    salute : function() {
+        console.log(this.name.firstName);
+    }
+}
+
+obj.salute();
