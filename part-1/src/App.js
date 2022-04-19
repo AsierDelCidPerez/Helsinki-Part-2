@@ -33,6 +33,7 @@ const Content = props => {
 }
 
 const Total = props => {
+  console.log(props);
   return (
     <>
       <p>Number of exercises {props.exs1 + props.exs2 + props.exs3}</p>
